@@ -1,0 +1,22 @@
+{
+  "name": "fullstack-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd server && yarn server\" \"cd client && yarn start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxStenex/react-express-todo.git"
+  },
+  "author": "MaxStenex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxStenex/react-express-todo/issues"
+  },
+  "homepage": "https://github.com/MaxStenex/react-express-todo#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
