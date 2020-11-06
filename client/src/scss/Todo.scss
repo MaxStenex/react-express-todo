@@ -1,0 +1,67 @@
+.todos {
+  &__list {
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;
+  }
+
+  &__item {
+  }
+}
+
+.todos-item {
+  display: flex;
+  background-color: #444444;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 16px;
+  align-items: center;
+  margin-bottom: 10px;
+  &__about {
+    margin-right: 25px;
+    line-height: 1.1;
+  }
+
+  &__name {
+    color: #ff9900;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+  }
+
+  &__buttons {
+    display: flex;
+    & button {
+      font-size: 16px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+  }
+
+  &__toggle {
+    margin-right: 10px;
+    border: 2px solid green;
+    color: green;
+    &:hover {
+      background-color: green;
+      color: #fff;
+      text-shadow: 1px 0px #000;
+    }
+  }
+
+  &__delete {
+    border: 2px solid red;
+    color: red;
+    &:hover {
+      background-color: red;
+      color: #fff;
+      text-shadow: 1px 0px #000;
+    }
+  }
+}
