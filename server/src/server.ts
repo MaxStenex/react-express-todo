@@ -12,7 +12,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
   .catch((err) => console.log(err));
 
 app.use('/api/todos', todos);

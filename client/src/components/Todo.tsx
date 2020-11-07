@@ -1,5 +1,6 @@
+import Axios from 'axios';
 import React from 'react';
-import { TodoType } from '../reducers/todoReducer';
+import { deleteTodo, TodoType, toggleComplete } from '../reducers/todoReducer';
 
 type TodoProps = TodoType & any;
 
@@ -10,6 +11,24 @@ const Todo: React.FC<TodoProps> = ({
   description,
   dispatch,
 }) => {
+  const onDelete = async (id: string) => {
+    try {
+      await Axios.post(`/api/todos/delete&${id}`);
+      dispatch(deleteTodo(id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const onToggle = async (id: string, completed: boolean) => {
+    try {
+      await Axios.post(`/api/todos/toggle-complete&${id}`, { completed });
+      dispatch(toggleComplete(id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <li
       className={
@@ -21,8 +40,15 @@ const Todo: React.FC<TodoProps> = ({
         <div className='todos-item__description'>{description}</div>
       </div>
       <div className='todos-item__buttons'>
-        <button className='todos-item__toggle'>Complete</button>
-        <button className='todos-item__delete'>Delete</button>
+        <button
+          className='todos-item__toggle'
+          onClick={() => onToggle(id, completed)}
+        >
+          {completed ? 'Resume' : 'Complete'}
+        </button>
+        <button className='todos-item__delete' onClick={() => onDelete(id)}>
+          Delete
+        </button>
       </div>
     </li>
   );

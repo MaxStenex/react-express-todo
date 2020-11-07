@@ -22,7 +22,14 @@ const Header: React.FC = () => {
       });
       setName('');
       setDescription('');
-      dispatch(addTodo(response.data));
+      dispatch(
+        addTodo({
+          name: response.data.name,
+          description: response.data.description,
+          completed: response.data.completed,
+          id: response.data._id,
+        })
+      );
     } catch (err) {}
   };
 

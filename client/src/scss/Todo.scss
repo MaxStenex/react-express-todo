@@ -27,6 +27,15 @@
       text-decoration: line-through;
       color: #cccccc;
     }
+    & .todos-item__toggle {
+      border: 2px solid #ff9900;
+      background-color: #ff9900;
+      color: #fff;
+      &:hover {
+        background-color: #fff;
+        color: #ff9900;
+      }
+    }
   }
   &__about {
     margin-right: 25px;

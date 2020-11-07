@@ -24,7 +24,7 @@ const TodoList: React.FC = () => {
         )
       );
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className='todos'>
@@ -33,7 +33,7 @@ const TodoList: React.FC = () => {
           {state.map((todo: TodoType, index) => {
             return (
               <Todo
-                key={index + todo.id}
+                key={todo.id}
                 dispatch={dispatch}
                 name={todo.name}
                 description={todo.description}
