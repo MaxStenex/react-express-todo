@@ -12,14 +12,15 @@ router
       console.log(err);
     }
   })
-  .post('/', async (req, res) => {
+  .post('/add', async (req, res) => {
     try {
+      const { name, description } = req.body;
       const todo = new Todo({
-        name: 'test-name',
-        description: 'test-description',
+        name: name,
+        description: description,
       });
       todo.save();
-      res.sendStatus(200);
+      res.json(todo);
     } catch (err) {
       console.log(err);
       res.sendStatus(500);
