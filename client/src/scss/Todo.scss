@@ -18,6 +18,16 @@
   font-size: 16px;
   align-items: center;
   margin-bottom: 10px;
+  &--completed {
+    & .todos-item__name {
+      text-decoration: line-through;
+      color: darken($color: #ff9900, $amount: 15);
+    }
+    & .todos-item__description {
+      text-decoration: line-through;
+      color: #cccccc;
+    }
+  }
   &__about {
     margin-right: 25px;
     line-height: 1.1;
