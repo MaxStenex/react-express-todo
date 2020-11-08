@@ -17,13 +17,25 @@
 }
 
 .add-todo {
+  flex-wrap: wrap;
+  @media (max-width: 790px) {
+    flex-wrap: wrap;
+  }
   &__input-section {
     display: flex;
     margin-right: 15px;
+    @media (max-width: 790px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__section {
     margin-right: 15px;
+    @media (max-width: 790px) {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -34,9 +46,15 @@
       padding: 8px 10px 8px 8px;
       border-radius: 5px;
       border: 2px solid black;
+      @media (max-width: 790px) {
+        width: 100%;
+      }
       &:focus {
         border: 2px solid #ff9900;
       }
+    }
+    @media (max-width: 790px) {
+      flex: 100%;
     }
   }
 
